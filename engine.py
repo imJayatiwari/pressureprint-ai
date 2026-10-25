@@ -161,11 +161,7 @@ def _level(score):
     return "Low"
 
 
-def analyze(raw: str):
-    msgs = parse_chat(raw)
-    if not msgs:
-        return {"error": "Please paste a conversation with at least one message."}
-
+def _analyze_msgs(msgs):
     hits = {}          # signal -> list of message indices
     per_message = {}   # index -> list of signals
     for m in msgs:
@@ -255,3 +251,16 @@ def analyze(raw: str):
             for m in msgs
         ],
     }
+
+
+def analyze(raw: str):
+    """Analyze a pasted chat. Also returns a timeline: the risk score after each message."""
+    msgs = parse_chat(raw)
+    if not msgs:
+        return {"error": "Please paste a conversation with at least one message."}
+    result = _analyze_msgs(msgs)
+    result["timeline"] = [
+        {"index": i, "score": _analyze_msgs(msgs[:i])["score"]}
+        for i in range(1, len(msgs) + 1)
+    ]
+    return result
