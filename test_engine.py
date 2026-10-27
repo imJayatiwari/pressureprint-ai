@@ -7,6 +7,9 @@ SCAMS = [
     "Fake bank officer (Hinglish)",
     "Fake job offer",
     "Fake police / arrest threat",
+    "Fake courier / customs (Hinglish)",
+    "Fake electricity bill (Hinglish)",
+    "Fake KYC link (Hinglish)",
 ]
 
 
@@ -20,6 +23,11 @@ def test_normal_chat_is_low():
     r = analyze(as_text("Normal chat with a friend"))
     assert r["level"] == "Low"
     assert r["score"] < 20
+
+
+@pytest.mark.parametrize("name", ["Normal Hinglish chat", "Real courier alert (safe)", "Real bank alert (safe)"])
+def test_safe_samples_are_low(name):
+    assert analyze(as_text(name))["level"] == "Low"
 
 
 def test_real_bank_alert_is_not_high():
@@ -48,6 +56,6 @@ def test_timeline_rises_for_scam_and_stays_low_for_normal():
     assert len(tl) == len(scam["messages"])
     assert tl[-1] == scam["score"]
     assert tl[-1] > tl[0]
-    assert all(b >= a for a, b in zip(tl, tl[1:]))   # risk never drops as pressure builds
+    assert all(b >= a for a, b in zip(tl, tl[1:]))
     normal = analyze(as_text("Normal chat with a friend"))
     assert max(t["score"] for t in normal["timeline"]) < 20
