@@ -28,6 +28,28 @@ SAMPLES = {
     "Real bank alert (safe)": [
         "HDFC Bank: Your OTP for the transaction is 482913. Do not share it with anyone.",
     ],
+    "Fake courier / customs (Hinglish)": [
+        "Caller: Main FedEx se bol raha hoon, aapke naam ka parcel customs mein pakda gaya hai.",
+        "Caller: Parcel mein illegal saamaan mila hai, aapko police case ka darr hai. Abhi turant payment karo.",
+        "Caller: Kisi ko mat batana, warna arrest ho jayega. Ye link kholo aur Rs 8000 fee bhejo.",
+    ],
+    "Fake electricity bill (Hinglish)": [
+        "Sender: Bijli vibhag se message hai. Aapka bill pending hai, aaj raat 9 baje connection kat jayega.",
+        "Sender: Abhi is number par call karo aur apna KYC update karo, link bheja hai.",
+        "Sender: Bank details aur OTP bata do, 10 minute mein update ho jayega.",
+    ],
+    "Fake KYC link (Hinglish)": [
+        "Msg: Dear customer, aapka SBI account KYC expire ho gaya hai.",
+        "Msg: Account block hone se bachane ke liye is link par click karo aur PAN, OTP daalo, abhi turant.",
+    ],
+    "Normal Hinglish chat": [
+        "Diya: Kal college aa rahi ho? Notes chahiye the.",
+        "Me: Haan aa rahi hoon, canteen mein milte hain 1 baje.",
+        "Diya: Theek hai, chai pila dena!",
+    ],
+    "Real courier alert (safe)": [
+        "Amazon: Your package will be delivered today by 8 pm. Delivery OTP 4821, share only with the delivery partner.",
+    ],
 }
 
 
