@@ -17,6 +17,7 @@ SIGNALS = {
             r"\b(customer care|customer support|support team|helpdesk|help desk)\b",
             r"\b(police|cyber ?cell|cbi|ed officer|income tax|customs|court|trai|rbi|narcotics)\b",
             r"\b(hr|recruiter|hiring manager|talent team)\b",
+            r"\b(bijli (vibhag|department)|electricity (board|department)|gas agency|telecom department)\b",
             r"\b(this is|i am|i'm|main|mai|hum)\b.{0,30}\b(from|calling from|se bol|se hu|se hoon|se bol raha|se bol rahi)\b",
             r"\b(courier|fedex|dhl|delivery)\b.*\b(parcel|package|shipment)\b",
             r"\b(your|aapka|aapki|apka|apki)\b.{0,20}\b(manager|boss|ceo|sir|madam)\b.{0,20}\b(asked|said|bola|kaha)\b",
@@ -35,6 +36,7 @@ SIGNALS = {
             r"\b(abhi|turant|jaldi|foran|aaj hi|abhi ke abhi|der mat)\b",
             r"\b(last chance|final warning|final notice|expire[sd]?|will be (blocked|suspended|closed|deactivated|cancelled))\b",
             r"\b(block ho|band ho|suspend ho|expire ho)\w*",
+            r"\b(kat jayega|kat jayegi|cut ho|disconnect ho|connection (kat|band))\w*|\b(will be|to be) (disconnected|cut off)\b",
         ],
     },
     "fear": {
